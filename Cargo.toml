@@ -1,8 +1,9 @@
 [package]
-
-name = "hello_world"
+name = "rust-training"
 version = "0.0.1"
-authors = [ "Your name <you@example.com>" ]
+authors = [
+	"Nico Orru <nigu.orru@gmail.com>"
+]
 
 [[bin]]
 name = "hello_world"
@@ -10,4 +11,4 @@ path = "src/hello_world/hello_world.rs"
 
 [[bin]]
 name = "module_sample"
-path = "src/modules/module_sample.rs"
+path = "src/modules/modules.rs"
