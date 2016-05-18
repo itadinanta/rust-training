@@ -1,5 +1,9 @@
+//! This module has a `main()` function which invokes
+//! other functions in external modules
+
 // this is for the compiler, looks for module3 in module3.rs
 mod module3;
+mod module4;
 
 mod module1 {
     pub fn hello() {
@@ -14,15 +18,14 @@ mod module2 {
 }
 
 fn main() {
-	// local modules
+    // local modules
     module1::hello();
     module2::world();
-    
-    module1::hello();
-    
+
     // modules are somewhere else
+    module4::hello();
     module3::space();
-    
+
     use module3::*;
     space();
     submodule::space();
