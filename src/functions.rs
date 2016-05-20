@@ -1,7 +1,7 @@
 // Place a function in a module
 mod f_1 {
     pub fn arg_to_str(s: &String) -> &str {
-        return s.as_str();
+        s.as_str()
     }
 }
 
