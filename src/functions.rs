@@ -12,16 +12,16 @@ mod f_2 {
         let o = OFFSET;
 
         // we capture o
-        let offset_lambda = || return o;
+        let offset_lambda = || o;
 
+        // return o; // <- can't capture dynamic environment in a fn item
         // we can't capture o in
         fn _offset_fn() -> i32 {
-            // return o; // <- can't capture dynamic environment in a fn item
-            return OFFSET;
+            OFFSET
         }
 
         // convoluted, just looking for an excuse to call the lambda
-        return i - offset_lambda();
+        i - offset_lambda()
     }
 }
 
@@ -37,9 +37,9 @@ fn c_main(args: &Vec<String>) -> i32 {
         println!("arg[{}] is {}", counter, f_1::arg_to_str(&a));
     }
 
-	//if !valid_args(args) { return 2 }
+    // if !valid_args(args) { return 2 }
 
-    return if n_args > 0 { 0 } else { 1 }
+    if n_args > 0 { 0 } else { 1 }
 }
 
 fn main() {
